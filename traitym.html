@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pulsating Heart</title>
+  <style>
+    .heart {
+      margin: 100px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      transform: rotate(45deg);
+      animation: pulse 1s infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      
+    }
+
+    .heart:before {
+      border-radius: 50% 50% 0 0;
+      top: -50px;
+      left: 0;
+    }
+
+    .heart:after {
+      border-radius: 50% 50% 50% 0;
+      top: 0;
+      left: 50px;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform:rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.1);
+      }
+      100% {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+</body>
+</html>
